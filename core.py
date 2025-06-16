@@ -6,10 +6,14 @@ from config import messages_collection
 def send_message(username):
     while True:
         try:
-            msg = input()
+            msg = input(f"[{datetime.utcnow().strftime('%H:%M:%S')}] {username}: ")
             if msg.lower() == "/exit":
                 print("Leaving chat...")
                 break
+            if msg.lower() ==  "/help":
+                print("/user - changes your username \n/exit - exits the chat\n/help - displays commands and description")
+            if msg.lower() == "/user":
+                pass
             messages_collection.insert_one({
                 "username": username,
                 "message": msg,
@@ -35,6 +39,6 @@ def receive_messages(username):
 def start_chat(platform_name):
     print(f"=== Chat App [{platform_name}] ===")
     username = input("Enter your username: ")
-    print("Type your message (type /exit to leave):")
+    print("(type /help to see commands)")
     threading.Thread(target=receive_messages, args=(username,), daemon=True).start()
     send_message(username)

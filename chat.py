@@ -1,7 +1,7 @@
 from core import start_chat
 
 def mode_sel():
-  mode = input("Platoform:  (Termux - T/Linux - L/Windows - W) > ")
+  mode = input("Platform:  (Termux - T/Linux - L/Windows - W) > ")
   if mode.capitalize() == 'L':
     start_chat("Linux")
   elif mode.capitalize() == 'T':
@@ -9,7 +9,7 @@ def mode_sel():
   elif mode.capitalize() == 'W':
     start_chat("Windows")
   else:
-    print("Invalid! Select one of the listed platforms!")\
+    print("Invalid! Select one of the listed platforms!")
     mode_sel()
 
 if __name__ == "__main__":
