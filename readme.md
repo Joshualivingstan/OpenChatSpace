@@ -57,22 +57,9 @@ Make sure the firewall allows connections to port `27017`.
 
 ## 🚀 Usage Instructions
 
-### 🐧 Linux
-
+### Launch Terminal
 ```bash
-python3 linux_chat.py
-```
-
-### 📱 Termux
-
-```bash
-python termux_chat.py
-```
-
-### 🪟 Windows
-
-```cmd
-python windows_chat.py
+python chat.py
 ```
 
 Once launched:
@@ -120,4 +107,4 @@ MIT License. Free to use, modify, and distribute.
 Built with ❤️ using:
 - Python
 - MongoDB
-- Terminal Power 😎
+- Terminal Aura 😎
