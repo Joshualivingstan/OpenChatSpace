@@ -1,4 +1,4 @@
-# 🗨️ Python MongoDB Chat App
+# 🗨️ OpenChatSpace
 
 A simple cross-platform (Linux, Termux, Windows) chat application using Python and MongoDB. Works entirely through the command line — no external libraries for UI or web frameworks.
 
