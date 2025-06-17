@@ -57,19 +57,28 @@ Make sure the firewall allows connections to port `27017`.
 
 ## 🚀 Usage Instructions
 
-### Launch Terminal
+### 🐧 Linux
 
 ```bash
-python chat.py
+python3 linux_chat.py
 ```
 
-### Commands
+### 📱 Termux
 
 ```bash
-/help or /? - Displays available commands
-/user - Displays Username
-/exit - Closes terminal
+python termux_chat.py
 ```
+
+### 🪟 Windows
+
+```cmd
+python windows_chat.py
+```
+
+Once launched:
+- Enter a username
+- Start chatting!
+- Type `/exit` to leave the chat
 
 ---
 
