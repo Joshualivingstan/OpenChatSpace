@@ -1,22 +1,25 @@
 import time
 import threading
-import socket
 from datetime import datetime
-from config import messages_collection
 from pymongo import MongoClient
-from pymongo.errors import DuplicateKeyError
+from prompt_toolkit import prompt
+from prompt_toolkit.patch_stdout import patch_stdout
+from config import messages_collection
 
 def send_message(username):
     while True:
         try:
-            msg = input(f"[{datetime.utcnow().strftime('%H:%M:%S')}] {username}: ")
+            with patch_stdout():
+                msg = prompt(f"[{datetime.utcnow().strftime('%H:%M:%S')}] {username}: ")
             if msg.lower() == "/exit":
                 print("Leaving chat...")
                 break
-            if msg.lower() ==  "/help":
+            elif msg.lower() == "/help":
                 print("/user - shows your username \n/exit - exits the chat\n/help - displays commands and description")
-            if msg.lower() == "/user":
-                pass
+                continue
+            elif msg.lower() == "/user":
+                print(f"Your username: {username}")
+                continue
             messages_collection.insert_one({
                 "username": username,
                 "message": msg,
@@ -45,21 +48,3 @@ def start_chat(platform_name):
     print("(type /help to see commands)")
     threading.Thread(target=receive_messages, args=(username,), daemon=True).start()
     send_message(username)
-
-def get_ip():
-    hostname = socket.gethostname()
-    return socket.gethostbyname(hostname)
-
-def register():
-    ip = get_ip()
-    if messages_collection.find_one({"_id": ip}):
-        return False
-    try:
-        messages_collection.insert_one({"_id": ip})
-        return True
-    except DuplicateKeyError:
-        return False
-
-def unregister_device_by_ip():
-    ip = get_ip()
-    messages_collection.delete_one({"_id": ip})
