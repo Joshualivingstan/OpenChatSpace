@@ -106,8 +106,8 @@ MIT License. Free to use, modify, and distribute.
 
 Contributor:
 - Joshua Livingston
+Built with ❤️ by @aftonsenpai using:
 
-Built with ❤️ using:
 - Python
 - MongoDB
 - Terminal Aura 😎
