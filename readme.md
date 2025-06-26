@@ -104,6 +104,9 @@ MIT License. Free to use, modify, and distribute.
 
 ## 🙋‍♂️ Credits
 
+Contributor:
+- Joshua Livingston
+
 Built with ❤️ using:
 - Python
 - MongoDB
