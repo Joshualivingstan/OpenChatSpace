@@ -104,7 +104,10 @@ MIT License. Free to use, modify, and distribute.
 
 ## 🙋‍♂️ Credits
 
-Built with ❤️ using:
+Contributor:
+- Joshua Livingston
+
+Built with ❤️ by @aftonsenpai using:
 - Python
 - MongoDB
 - Terminal Aura 😎
